@@ -1,0 +1,14 @@
+﻿@model BDLavacar.Models.sp_RetornaPreFacturaID_Result
+@{
+    ViewBag.Title = "PreFacturaEliminar";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>PreFactura Eliminar</h2>
+<form method="post">
+    <label>Vehículo</label>
+    <input type="text" id="txtVehiculo" value="@Model.Id_Vehiculo_F" readonly />
+    <label>Persona</label>
+    <input type="text" id="txtPersona" value="@Model.Id_Persona_F" readonly />
+    <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" />
+</form>

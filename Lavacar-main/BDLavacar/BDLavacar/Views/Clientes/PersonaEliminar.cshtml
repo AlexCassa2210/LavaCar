@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewBag.Title = "PersonaEliminar";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+<h2>PersonaEliminar</h2>
+
+<h2>Cliente Modifica</h2>
+<form id="frmModificaUsuario" method="post">
+    <div class="form-group">
+        <label>Cédula :</label>
+        <input type="text" name="Cedula_P" id="Cedula_P" class="form-control" value="@Model.Cedula_P" readonly/>
+    </div>
+    <div class="form-group">
+        <label>Genero:</label>
+        <select name="Genero_P" id="Genero" class="form-control" disabled>
+            @{
+
+                if (Model.Genero_P == "Masculino")
+                {
+                    <option value="Masculino" id="Masculino" selected>Masculino</option>
+                    <option value="Femenino" id="Femenino">Femenino</option>
+                }
+                else
+                {
+                    <option value="Masculino" id="Masculino">Masculino</option>
+                    <option value="Femenino" id="Femenino" selected>Femenino</option>
+                }
+            }
+
+
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Fecha de nacimiento:</label>
+        <input type="text" name="Fecha_Nacimiento_P" id="Fecha_Nacimiento_P" class="form-control" value="@Model.Fecha_Nacimiento_P" readonly />
+    </div>
+    <div class="form-group">
+        <label>Nombre completo:</label>
+        <input type="text" name="Nombre_P" id="Nombre_P" class="form-control" value="@Model.Nombre_P" readonly />
+    </div>
+    <div class="form-group">
+        <label>Nombre completo:</label>
+        <input type="text" name="PApellido" id="PApellido" class="form-control" value="@Model.PApellido"  readonly/>
+    </div>
+
+    <div class="form-group">
+        <label>Nombre completo:</label>
+        <input type="text" name="SApellido" id="SApellido" class="form-control" value="@Model.SApellido" readonly />
+    </div>    <div class="form-group">
+        <label>Correo Electrónico:</label>
+        <input type="text" name="Correo_P" id="Correo_P" class="form-control" value="@Model.Correo_P" readonly />
+    </div>
+    <div class="form-group">
+        <label>Provincia:</label>
+        <select name="id_Provincia" id="provincia" class="form-control" readonly disabled></select>
+    </div>
+    <div class="form-group">
+        <label>Cantón:</label>
+        <select name="id_Canton" id="canton" class="form-control" disabled></select>
+    </div>
+    <div class="form-group">
+        <label>Tipo de Persona:</label>
+        <select name="Id_TipoPersona_TP" id="Tipo_TP" class="form-control" disabled>
+            <option value="">Seleccione Tipo Usuario </option>
+            @{
+                foreach (BDLavacar.Models.sp_RetornaTipoPersona_Result Tipo in this.ViewBag.TipoPersona)
+                {
+                    <option value="@Tipo.Id_TipoPersona_TP"> @Tipo.Tipo_TP  </option>
+                }
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Distrito:</label>
+        <select name="id_Distrito" id="distrito" class="form-control" disabled></select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Eliminar" id="btnEliminar" class="btn btn-danger" />
+    </div>
+    <input type="hidden" name="hddProvincia" id="hddProvinciaID" value="@Model.id_Provincia" />
+    <input type="hidden" name="hddCantonID" id="hddCantonID" value="@Model.id_Canton" />
+    <input type="hidden" name="hddDistritoID" id="hddDistritoID" value="@Model.id_Distrito" />
+</form>
+@section scripts{
+
+    <script src="~/Scripts/Clientes/ClienteModifica.js"></script>
+}

@@ -1,0 +1,34 @@
+﻿@model List<BDLavacar.Models.sp_RetornaVehiculo_Result>
+
+@{
+    ViewBag.Title = "VehiculoLista";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<<h2>Lista de vehículos</h2>
+
+<table class="table">
+    <tr>
+        <td><strong>Placa</strong> </td>
+        <td><strong>Marca</strong></td>
+        <td><strong>Tipo</strong></td>
+        <td><strong>Cantidad de puertas</strong></td>
+        <td><strong>Cantidad de ruedas</strong></td>
+        <td><strong>Acción</strong></td>
+        <td><strong>Acción</strong></td>
+    </tr>
+    @{ foreach (BDLavacar.Models.sp_RetornaVehiculo_Result posicion in Model)
+        {
+            <tr>
+                <td>@posicion.Placa_V</td>
+                <td>@posicion.Tipo_MV</td>
+                <td>@posicion.Tipo_TV</td>
+                <td>@posicion.Numero_Puertas_V</td>
+                <td>@posicion.Numero_Ruedas_V</td>
+                <td><a href="~/Vehiculo/VehiculoModifica?Id_Vehiculo_V=@posicion.Id_Vehiculo_V" class="btn btn-info">Modificar</a></td>
+                <td><a href="~/Vehiculo/VehiculoElimina?Id_Vehiculo_V=@posicion.Id_Vehiculo_V" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+        }
+    }
+</table>
+

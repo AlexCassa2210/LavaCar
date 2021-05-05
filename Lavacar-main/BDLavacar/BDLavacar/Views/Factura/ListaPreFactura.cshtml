@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "ListaPreFactura";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>ListaPreFactura</h2>
+<table class="table">
+    <tr>
+        <td><strong>Placa_Vehículo</strong> </td>
+        <td><strong>Nombre</strong></td>
+        <td><strong>Fecha de la creación</strong></td>
+        <td><strong>Acciones</strong></td>
+    </tr>
+    @{
+        foreach (BDLavacar.Models.sp_RetornaFacturaNULL_Result posicion in this.Model)
+        {
+    <tr>
+        <td>@posicion.Placa_V</td>
+        <td>@posicion.Nombre_Completo</td>
+        <td>@posicion.Fecha_F </td>
+
+        <td><a href="~/Factura/insertaFactura?Id_Factura_F=@posicion.Id_Factura_F" class="btn btn-info">Crear Factura</a><a href="~/Factura/PreFacturaEliminar?Id_Factura_F=@posicion.Id_Factura_F" class="btn btn-danger">Eliminar</a></td>
+        
+    </tr>
+        }
+    }
+</table>
+

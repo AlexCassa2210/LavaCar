@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "PaisFabricanteElimina";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Elimina País Fabricación</h2>
+
+
+<form id="frmPaisFabricacionElimina" method="post">
+    <div class="form-group">
+        <label>País de fabricación</label>
+        <input type="text" name="Pais_PF" id="Pais_PF" class="form-control" value="@Model.Pais_PF" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>Código del país de fabricación</label>
+        <input type="text" name="Codigo_PF" id="Codigo_PF" class="form-control" value="@Model.Codigo_PF" readonly />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Eliminar" id="btnEliminar" class="btn btn-danger"/>
+    </div>
+
+</form>

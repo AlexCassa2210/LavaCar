@@ -1,0 +1,29 @@
+﻿@model List<BDLavacar.Models.sp_RetornaServicios_Result>
+@{
+    ViewBag.Title = "ServicioLista";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Servicio Lista</h2>
+
+<table class="table">
+    <tr>
+        <td><strong>Código</strong> </td>
+        <td><strong>Descripción</strong></td>
+        <td><strong>Precio</strong></td>
+        <td><strong>Tipo</strong></td>
+    </tr>
+    @{
+        foreach (BDLavacar.Models.sp_RetornaServicios_Result posicion in this.Model)
+        {
+            <tr>
+                <td>@posicion.Codigo_S</td>
+                <td>@posicion.Descripcion_S</td>
+                <td>@posicion.Precio_S</td>
+                <td>@posicion.Tipo_S</td>
+                <td><a href="~/Servicios/ServicioModifica?Id_Servicio_S=@posicion.Id_Servicio_S" class="btn btn-info">Modificar</a></td>
+                <td><a href="~/Servicios/ServicioEliminar?Id_Servicio_S=@posicion.Id_Servicio_S" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+        }
+    }
+</table>

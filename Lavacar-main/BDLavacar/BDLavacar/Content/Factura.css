@@ -1,0 +1,21 @@
+﻿body {
+
+}
+    #Primerafila
+
+{
+    background-color: rgba(0, 0, 255, 0.75);
+    color: white;
+}
+
+#segundafila {
+    padding: 20px;
+    background-color: rgba(0, 170, 228, 0.69);
+    color: white;
+    text-align: center;
+}
+
+    #segundafila input, select, a {
+        margin: 0 auto;
+    }
+}

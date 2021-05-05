@@ -1,0 +1,34 @@
+﻿@model BDLavacar.Models.sp_RetornaServicioID_Result
+@{
+    ViewBag.Title = "ServicioModifica";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Servicio Modifica</h2>
+
+
+<form id="frmModificaServicio" method="post">
+    <div class="form-group">
+        <label>Código:</label>
+        <input type="text" name="Codigo_S" id="Codigo_S" class="form-control" value="@Model.Codigo_S" />
+    </div>
+    <div class="form-group">
+        <label>Descripción:</label>
+        <input type="text" name="Descripcion_S" id="Descripcion_S" class="form-control" value="@Model.Descripcion_S" />
+    </div>
+    <div class="form-group">
+        <label>Precio:</label>
+        <input type="text" name="Precio_S" id="Precio_S" class="form-control" value="@Model.Precio_S" />
+    </div>
+    <div class="form-group">
+        <label>Nombre :</label>
+        <input type="text" name="Tipo_S" id="Tipo_S" class="form-control" value="@Model.Tipo_S" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Modificar" id="btnModificar" class="btn btn-success" />
+    </div>
+
+</form>
+@section scripts{
+    <script src="~/Scripts/Validaciones/ValidacionesModificaServicio.js"></script>
+}

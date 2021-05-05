@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <title>@ViewBag.Title</title>
+    <link href="https://kendo.cdn.telerik.com/2020.2.617/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2020.2.617/styles/kendo.blueopal.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("LavesuCar", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Vehiculos", "VehiculoLista", "Vehiculo")</li>
+                    <li>@Html.ActionLink("ClienteVista", "ClientesVistaLista", "Inicio")</li>
+                    <li>@Html.ActionLink("Servicios", "ServicioLista", "Servicios")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Reportes
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="background-color:#e1e1e1">
+                            <li>@Html.ActionLink("Vehículos por cliente", "VehiculosClienteID", "Reportes")</li>
+                            <li>@Html.ActionLink("Servicios por cliente", "ServiciosClienteID", "Reportes")</li>
+                            <li>@Html.ActionLink("Servicios por vehículo", "ServiciosVehiculoID", "Reportes")</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Cerrar Sesión", "InicioSesion", "Login")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid body-content">
+        @RenderBody()
+  
+
+    </div>
+    <div style=" position: fixed; left: 0; bottom: 0; padding-top:10px;width: 100%; background-color: #000000; color: white; text-align: center">
+        <footer class="bg-light text-center text-lg-start">
+            <p>&copy; @DateTime.Now.Year - Lavacar</p>
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/myBundle")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Login/Cerrar_Sesion.js"></script>
+</body>
+</html>

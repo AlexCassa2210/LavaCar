@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "VehiculoElimina";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Elimina vehículo</h2>
+
+<form id="frmVehiculoElimina" method="post">
+    <div>
+        <label>Placa</label>
+        <input type="text" name="Placa_V" id="Placa_V" class="form-control" value="@Model.Placa_V" readonly/>
+    </div>
+
+    <div class="form-group">
+        <label>Marca:</label>
+        <select name="Id_Marca_MV" id="Id_Marca_MV" class="form-control">
+            <option value="">Favor seleccione</option>
+            @{
+                foreach (BDLavacar.Models.sp_RetornaMarcaVehiculo_Result marcas in this.ViewBag.ListaMarcas)
+                {
+                    bool esIdMarcaModelo = marcas.Id_Marca_MV == Model.Id_Marca_MV;
+
+
+                    if (esIdMarcaModelo)
+                    {
+                        <option value="@marcas.Id_Marca_MV" readonly>@marcas.Tipo_MV </option>
+                    }
+                    else
+                    {
+                        <option value="@marcas.Id_Marca_MV" readonly>@marcas.Tipo_MV </option>
+                    }
+
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Marca:</label>
+        <select name="Id_Tipo_TV" id="Id_Tipo_TV" class="form-control">
+            <option value="">Favor seleccione</option>
+            @{
+                foreach (BDLavacar.Models.sp_RetornaTipoVehiculo_Result tipos in this.ViewBag.ListaTipos)
+                {
+                    bool esIdTipoModelo = tipos.Id_Tipo_TV == Model.Id_Tipo_TV;
+
+
+                    if (esIdTipoModelo)
+                    {
+                        <option value="@tipos.Id_Tipo_TV" readonly>@tipos.Tipo_TV </option>
+                    }
+                    else
+                    {
+                        <option value="@tipos.Id_Tipo_TV" readonly>@tipos.Tipo_TV </option>
+                    }
+
+                }
+            }
+        </select>
+    </div>
+
+    <div>
+        <label>Puertas:</label>
+        <input type="text" name="Numero_Puertas_V" id="Numero_Puertas_V" class="form-control" value="@Model.Numero_Puertas_V" readonly/>
+    </div>
+
+    <div>
+        <label>Ruedas:</label>
+        <input type="text" name="Numero_Ruedas_V" id="Numero_Ruedas_V" class="form-control" value="@Model.Numero_Ruedas_V" readonly />
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Eliminar" id="btnEliminar" class="btn btn-danger" />
+    </div>
+
+</form>
+

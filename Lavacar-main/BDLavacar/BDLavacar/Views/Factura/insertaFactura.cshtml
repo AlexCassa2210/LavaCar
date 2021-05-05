@@ -1,0 +1,50 @@
+﻿<link href="~/Content/Factura.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "insertaFactura";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+<div class="row" id="Primerafila">
+    <div class="col-sm-1">
+        <h2 style="font-size: 13px"><strong>Factura # </strong> </h2>
+    </div>
+    <div class="col-sm-5">
+        <h2>Datos Cliente: </h2>
+        <h3>Nombre Completo: @HttpContext.Current.Session["Nombre"].ToString()</h3>
+        <h3>Cedula: @HttpContext.Current.Session["cedula"].ToString() </h3>
+    </div>
+    <div class="col-sm-4">
+        <h2>Datos Vehículo: </h2>
+        <h3>Marca: @HttpContext.Current.Session["marca"].ToString()</h3>
+        <h3>Placa: @HttpContext.Current.Session["placa"].ToString()</h3>
+    </div>
+    <div class="col-sm-2">
+        <h3>Fecha: @HttpContext.Current.Session["fecha"].ToString()</h3>
+        <h3>Monto total del servicio facturado: @HttpContext.Current.Session["total"].ToString()</h3>
+    </div>
+</div>
+<div class="row" id="segundafila">
+    <form id="frmFacturaServicio " method="post">
+        <div class="form-group">
+            <label>Cantidad:</label>
+            <input type="text" name="Cantidad_FVS" id="cantidad" class="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Servicio:</label>
+            <select name="Id_Servicio_FVS" id="servicio" class="form-control" required>
+                <option value="">Seleccione un Servicio </option>
+                @{
+                    foreach (BDLavacar.Models.sp_RetornaServicios_Result Servicio in this.ViewBag.Servicio)
+                    {
+                        <option value="@Servicio.Id_Servicio_S"> @Servicio.Tipo_S  </option>
+                    }
+                }
+            </select>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Ingresar" id="btnInsertar" class="btn btn-success " />
+            <a href="/Factura/KendoFactura" class="btn btn-warning">Lista_Factura</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "ServicioEliminar";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>ServicioEliminar</h2>
+
+<form id="frmModificaUsuario" method="post">
+    <div class="form-group">
+        <label>Código:</label>
+        <input type="text" name="Codigo_S" id="Codigo_S" class="form-control" value="@Model.Codigo_S" readonly/>
+    </div>
+    <div class="form-group">
+        <label>Descripción:</label>
+        <input type="text" name="Descripcion_S" id="Descripcion_S" class="form-control" value="@Model.Descripcion_S"readonly />
+    </div>
+    <div class="form-group">
+        <label>Precio:</label>
+        <input type="text" name="Precio_S" id="Precio_S" class="form-control"value="@Model.Precio_S" readonly/>
+    </div>
+    <div class="form-group">
+        <label>Nombre :</label>
+        <input type="text" name="Tipo_S" id="Tipo_S" class="form-control" value="@Model.Tipo_S"readonly/>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Eliminar" id="btnEliminar" class="btn btn-danger" />
+    </div>
+
+</form>  

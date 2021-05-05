@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "MarcaVehiculoNuevo";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Nueva marca de vehículo</h2>
+
+<form id="frmMarcaVehiculoNuevo" method="post">
+
+    <div class="form-group">
+        <label>Marca vehículo:</label>
+        <input type="text" name="Tipo_MV" id="Tipo_MV" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Código del vehículo:</label>
+        <input type="text" name="Codigo_MV" id="Codigo_MV" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>País de Fabricación:</label>
+        <select name="Id_PaisFabricacion_PF" id="Id_PaisFabricacion_PF" class="form-control">
+            <option value="">Seleccione un país </option>
+            @{
+                foreach (BDLavacar.Models.sp_RetornaPaisFabricante_Result pais in this.ViewBag.ListaPaises)
+                {
+                    <option value="@pais.Id_PaisFabricacion_PF"> @pais.Pais_PF  </option>
+                }
+            }
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Insertar" id="btnInsertar" class="btn btn-success" />
+    </div>
+
+</form>
+@section scripts{
+    <script src="~/Scripts/Validaciones/ValidacionesInsertaMV.js"></script>
+}

@@ -1,0 +1,65 @@
+﻿@model BDLavacar.Models.sp_RetornaVistaClientes_Result
+@section css{
+    <link href="~/Content/Carrousel.css" rel="stylesheet" />
+}
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+<div >
+    <div class="col-sm-12 jumbotron">
+        <h2>
+            Bienvenido <strong>@Model.PApellido @Model.SApellido @Model.Nombre_P</strong>,
+            usted ingresó por última vez <strong>@Model.UltimaFecha_SG</strong>
+        </h2>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-lg-12" style="padding-top: 25px;">
+            <video controls="controls" style="width: 100%">
+                <source src="../Imagenes/Video-McQueen.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+
+    <div class="row">
+        <audio  autoplay>
+            <source src="../Imagenes/Soy-Veloz.mp3" type="audio/mp3"/>
+        </audio>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12" style="padding-top: 25px; padding-bottom:25px;">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol id="olCarousel" class="carousel-indicators">
+                    <li data-target="myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="myCarousel" data-slide-to="1"></li>
+                    <li data-target="myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <span class="sprite Imagen-1"></span>
+                    </div>
+                    <div class="item">
+                        <span class="sprite Imagen-2"></span>
+                    </div>
+                    <div class="item">
+                        <span class="sprite Imagen-3"></span>
+                    </div>
+                </div>
+
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+
+

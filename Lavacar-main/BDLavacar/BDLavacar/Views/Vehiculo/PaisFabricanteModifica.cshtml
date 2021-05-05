@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "PaisFabricanteModifica";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Modifica País Fabricación</h2>
+
+
+<form id="frmPaisFabricacionModifica" method="post">
+    <div class="form-group">
+        <label>País de fabricación</label>
+        <input type="text" name="Pais_PF" id="Pais_PF" class="form-control" value="@Model.Pais_PF" />
+    </div>
+
+    <div class="form-group">
+        <label>Código del país de fabricación</label>
+        <input type="text" name="Codigo_PF" id="Codigo_PF" class="form-control" value="@Model.Codigo_PF" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Modificar" id="btnModificar" class="btn btn-info" />
+    </div>
+
+</form>
+@section scripts{
+    <script src="~/Scripts/Validaciones/ValidacionesModificaPM.js"></script>
+}

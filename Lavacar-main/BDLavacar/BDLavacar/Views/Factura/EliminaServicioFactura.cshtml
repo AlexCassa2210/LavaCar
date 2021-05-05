@@ -1,0 +1,17 @@
+﻿@model BDLavacar.Models.sp_RetornaFacturaServicioID_Result
+@{ 
+    ViewBag.Title = "EliminaServicioFactura";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Elimina servicios de la factura</h2>
+
+<form method="post">
+    <label>Servicio</label>
+    <input type="text" id="txtServicio" value="@Model.Id_Servicio_FVS" readonly />
+
+    <label># Factura</label>
+    <input type="text" id="txtFactura" value="@Model.Id_Factura_FVS" readonly />
+
+    <input type="submit" name="btnEliminar" class="btn btn-danger" value="Eliminar" />
+</form>

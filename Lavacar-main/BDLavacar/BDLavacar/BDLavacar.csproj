@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3DF96640-1275-46B1-ADD6-9D5AC8B88D5A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BDLavacar</RootNamespace>
+    <AssemblyName>BDLavacar</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ClienteVistaController.cs" />
+    <Compile Include="Controllers\FacturaController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ReportesController.cs" />
+    <Compile Include="Controllers\ServiciosController.cs" />
+    <Compile Include="Controllers\VehiculoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDLavacar.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDLavacar.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDLavacar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BDLavacar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDLavacar.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Canton.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Distrito.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Provincia.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetornaCantonesID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetornaCantones_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetornaProvincias_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_MuestraVehiculo_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ReporteServiciosclienteID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ReporteServicioscliente_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ReporteServiciosvehiculoID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ReporteServiciosvehiculo_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ReporteVehiculosclienteID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_ReporteVehiculoscliente_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaClientesID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaClientesPreFactura_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaClientes_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaCuenta_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaDistritos_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaFacturaFinal_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaFacturaID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaFacturaNULL_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaFacturaServicioID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaFacturaServicio_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaFacturas_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaLogueo_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaMarcaVehiculo_ID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaMarcaVehiculo_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaPaisFabricante_ID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaPaisFabricante_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaPreFacturaID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaServicioID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaServicios_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaTipoPersona_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaTipoVehiculo_ID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaTipoVehiculo_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaVehiculoUI_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaVehiculo_ID_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaVehiculo_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_RetornaVistaClientes_Result.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblFactura_F.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_FacturaServicioVehiculo_FSV.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_MarcaVehiculo_MV.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_PaisFabricacion_PF.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Persona_P.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Seguridad_SG.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Servicio_S.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_TipoPersona_TP.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Tipo_TV.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tbl_Vehiculo_V.cs">
+      <DependentUpon>BDLavacar.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Carrousel.css" />
+    <Content Include="Content\Factura.css" />
+    <Content Include="Estilos\Estilos.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\Carrousel_McQueen.png" />
+    <Content Include="Imagenes\Soy-Veloz.mp3" />
+    <Content Include="Imagenes\Video-McQueen.mp4" />
+    <Content Include="Imagenes\Sin título.png" />
+    <Content Include="Models\BDLavacar.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDLavacar.edmx</DependentUpon>
+      <LastGenOutput>BDLavacar.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BDLavacar.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDLavacar.edmx</DependentUpon>
+      <LastGenOutput>BDLavacar.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\BDLavacar.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BDLavacar.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BDLavacar.edmx.diagram">
+      <DependentUpon>BDLavacar.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Clientes\ClienteLocalizacion.js" />
+    <Content Include="Scripts\Clientes\ClienteModifica.js" />
+    <Content Include="Scripts\ComprobacionFecha\comprobacionFecha.js" />
+    <Content Include="Scripts\Facturas\FacturaJqueryUI.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Login\Cerrar_Sesion.js" />
+    <Content Include="Scripts\Login\Login.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Reportes\Generico.js" />
+    <Content Include="Scripts\Reportes\KendoFactura.js" />
+    <Content Include="Scripts\Reportes\KendoFacturaXServicio.js" />
+    <Content Include="Scripts\Reportes\KendoServicioXCliente.js" />
+    <Content Include="Scripts\Reportes\KendoServicioXClienteID.js" />
+    <Content Include="Scripts\Reportes\KendoServicioXVehiculo.js" />
+    <Content Include="Scripts\Reportes\KendoServicioXVehiculoID.js" />
+    <Content Include="Scripts\Reportes\KendoVehiculoXCliente.js" />
+    <Content Include="Scripts\Reportes\KendoVehiculoXClienteID.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesInsertaMV.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesInsertaPF.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesInsertaServicio.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesInsertaTV.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesInsertaVehiculo.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesModificaCliente.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesModificaMV.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesModificaPM.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesModificaServicio.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesModificaTV.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesModificaVehiculo.js" />
+    <Content Include="Scripts\Validaciones\ValidacionesModificaVistaPersona.js" />
+    <Content Include="Scripts\Validaciones\ValidacionInsertaCliente.js" />
+    <Content Include="Scripts\Vehiculos\vehiculos.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutBDLavacar.cshtml" />
+    <Content Include="Views\Vehiculo\PaisFabricanteLista.cshtml" />
+    <Content Include="Views\Vehiculo\MarcaVehiculoLista.cshtml" />
+    <Content Include="Views\Vehiculo\TipoVehiculoLista.cshtml" />
+    <Content Include="Views\Vehiculo\PaisFabricanteNuevo.cshtml" />
+    <Content Include="Views\Vehiculo\TipoVehiculoNuevo.cshtml" />
+    <Content Include="Views\Vehiculo\MarcaVehiculoNuevo.cshtml" />
+    <Content Include="Views\Vehiculo\PaisFabricanteElimina.cshtml" />
+    <Content Include="Views\Vehiculo\MarcaVehiculoElimina.cshtml" />
+    <Content Include="Views\Vehiculo\TipoVehiculoElimina.cshtml" />
+    <Content Include="Views\Clientes\InsertarUsuario.cshtml" />
+    <Content Include="Views\Clientes\ClientesLista.cshtml" />
+    <Content Include="Views\Clientes\PersonaModifica.cshtml" />
+    <Content Include="Views\Clientes\PersonaEliminar.cshtml" />
+    <Content Include="Views\Servicios\InsertarServicio.cshtml" />
+    <Content Include="Views\Servicios\ServicioLista.cshtml" />
+    <Content Include="Views\Servicios\ServicioEliminar.cshtml" />
+    <Content Include="Views\Servicios\ServicioModifica.cshtml" />
+    <Content Include="Views\Vehiculo\PaisFabricanteModifica.cshtml" />
+    <Content Include="Views\Vehiculo\MarcaVehiculoModifica.cshtml" />
+    <Content Include="Views\Vehiculo\TipoVehiculoModifica.cshtml" />
+    <Content Include="Views\Vehiculo\VehiculoNuevo.cshtml" />
+    <Content Include="Views\Vehiculo\VehiculoLista.cshtml" />
+    <Content Include="Views\Vehiculo\VehiculoModifica.cshtml" />
+    <Content Include="Views\Vehiculo\VehiculoElimina.cshtml" />
+    <Content Include="Views\Factura\RegistraFactura.cshtml" />
+    <Content Include="Views\Factura\ListaPreFactura.cshtml" />
+    <Content Include="Views\Factura\insertaFactura.cshtml" />
+    <Content Include="Views\Factura\PreFacturaEliminar.cshtml" />
+    <Content Include="Views\Login\login.cshtml" />
+    <Content Include="Views\Login\InicioSesion.cshtml" />
+    <Content Include="Views\Reportes\ReportesIndex.cshtml" />
+    <Content Include="Views\ClienteVista\ClientesVistaLista.cshtml" />
+    <Content Include="Views\Reportes\VehiculosCliente.cshtml" />
+    <Content Include="Views\Reportes\Servicioscliente.cshtml" />
+    <Content Include="Views\Reportes\ServiciosVehiculo.cshtml" />
+    <Content Include="Views\Shared\_LayoutCliente.cshtml" />
+    <Content Include="Views\Reportes\ServiciosVehiculoID.cshtml" />
+    <Content Include="Views\Reportes\VehiculosClienteID.cshtml" />
+    <Content Include="Views\Reportes\ServiciosClienteID.cshtml" />
+    <Content Include="Views\Home\Inicio.cshtml" />
+    <Content Include="Views\Factura\KendoFactura.cshtml" />
+    <Content Include="Views\ClienteVista\VistaPersonaModifica.cshtml" />
+    <Content Include="Views\Factura\MuestraServicios.cshtml" />
+    <Content Include="Views\Factura\EliminaServicioFactura.cshtml" />
+    <Content Include="Views\Factura\ModificaServicioFactura.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65438</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65438/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

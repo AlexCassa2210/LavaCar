@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "TipoVehiculoNuevo";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Nuevo tipo vehículo</h2>
+
+<form id="frmTipoVehiculoNuevo" method="post">
+
+    <div class="form-group">
+        <label>Tipo vehículo:</label>
+        <input type="text" name="Tipo_TV" id="Tipo_TV" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Código del tipo de vehículo:</label>
+        <input type="text" name="codigo_TV" id="codigo_TV" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Insertar" id="btnInsertar" class="btn btn-success" />
+    </div>
+
+</form>
+@section scripts{
+    <script src="~/Scripts/Validaciones/ValidacionesInsertaTV.js"></script>
+}

@@ -1,0 +1,29 @@
+﻿@model List<BDLavacar.Models.sp_RetornaMarcaVehiculo_Result>
+
+@{
+    ViewBag.Title = "MarcaVehiculoLista";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Lista de Marcas Vehiculo</h2>
+
+<table class="table">
+    <tr>
+        <td><strong>Marca</strong></td>
+        <td><strong>País Fabricación</strong></td>
+        <td><strong>Código</strong></td>
+        <td><strong>Acción</strong></td>
+        <td><strong>Acción</strong></td>
+    </tr>
+    @{ foreach (BDLavacar.Models.sp_RetornaMarcaVehiculo_Result posicion in Model)
+        {
+        <tr>
+            <td>@posicion.Tipo_MV</td>
+            <td>@posicion.Pais_PF</td>
+            <td>@posicion.Codigo_MV</td>
+            <td><a href="~/Vehiculo/MarcavehiculoModifica?Id_Marca_MV=@posicion.Id_Marca_MV" class="btn btn-info">Modificar</a></td>
+            <td><a href="~/Vehiculo/MarcaVehiculoElimina?Id_Marca_MV=@posicion.Id_Marca_MV" class="btn btn-danger">Eliminar</a></td>
+        </tr>
+        }
+    }
+</table>

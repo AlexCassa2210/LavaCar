@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "PaisFabricanteNuevo";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Nuevo pais fabricante</h2>
+
+<form id="frmPaisFabricanteNuevo" method="post">
+
+    <div class="form-group">
+        <label>Nombre país:</label>
+        <input type="text" name="Pais_PF" id="Pais_PF" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Código país:</label>
+        <input type="text" name="Codigo_PF" id="Codigo_PF" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Insertar" id="btnInsertar" class="btn btn-success" />
+    </div>
+
+</form>
+@section scripts{
+    <script src="~/Scripts/Validaciones/ValidacionesInsertaPF.js"></script>
+}

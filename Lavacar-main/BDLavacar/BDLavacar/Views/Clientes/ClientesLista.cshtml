@@ -1,0 +1,36 @@
+﻿@model List<BDLavacar.Models.sp_RetornaClientesPreFactura_Result>
+@{
+    ViewBag.Title = "ClientesLista";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Clientes Lista</h2>
+<table class="table">
+    <tr>
+        <td><strong>Cédula</strong> </td>
+        <td><strong>Genero</strong></td>
+        <td><strong>Fecha Nacimiento</strong></td>
+        <td><strong>Nombre</strong></td>
+        <td><strong>Correo</strong></td>
+        <td><strong>Lugar de Residencia</strong></td>
+        <td><strong>Categoria</strong></td>
+        
+
+    </tr>
+    @{ 
+        foreach (BDLavacar.Models.sp_RetornaClientesPreFactura_Result posicion in this.Model)
+        {
+            <tr>
+                <td>@posicion.Cedula_P</td>
+                <td>@posicion.Genero_P</td>
+                <td>@posicion.Fecha_Nacimiento_P</td>
+                <td>@posicion.Nombre_P</td>
+                <td>@posicion.Correo_P</td>
+                <td>@posicion.Provincia,@posicion.canton,@posicion.distrito</td>
+                <td>@posicion.Tipo_TP</td>
+                <td><a href="~/Clientes/PersonaModifica?Id_Cliente_P=@posicion.Id_Cliente_P" class="btn btn-info">Modificar</a></td>
+                <td><a href="~/Clientes/PersonaEliminar?Id_Cliente_P=@posicion.Id_Cliente_P" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+        }
+    }
+</table>

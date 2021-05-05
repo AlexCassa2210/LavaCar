@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "VehiculoNuevo";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Nuevo vehículo</h2>
+
+<form id="frmVehiculoNuevo" method="post">
+
+    <div class="form-group">
+        <label>Placa:</label>
+        <input type="text" name="Placa_V" id="Placa_V" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Marca del vehículo:</label>
+        <select name="Id_Marca_V" id="Id_Marca_V" class="form-control">
+            <option value="">Seleccione un país </option>
+            @{
+                foreach (BDLavacar.Models.sp_RetornaMarcaVehiculo_Result marca in this.ViewBag.ListaMarcas)
+                {
+                    <option value="@marca.Id_Marca_MV"> @marca.Tipo_MV  </option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Tipo de vehículo:</label>
+        <select name="Id_Tipo_V" id="Id_Tipo_V" class="form-control">
+            <option value="">Seleccione un país </option>
+            @{
+                foreach (BDLavacar.Models.sp_RetornaTipoVehiculo_Result tipo in this.ViewBag.ListaTipos)
+                {
+                    <option value="@tipo.Id_Tipo_TV"> @tipo.Tipo_TV  </option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Cantidad puertas:</label>
+        <input type="text" name="Numero_Puertas_V" id="Numero_Puertas_V" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Cantidad ruedas:</label>
+        <input type="text" name="Numero_Ruedas_V" id="Numero_Ruedas_V" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Insertar" id="btnInsertar" class="btn btn-success" />
+    </div>
+
+</form>
+@section scripts{
+    <script src="~/Scripts/Validaciones/ValidacionesInsertaVehiculo.js"></script>
+}

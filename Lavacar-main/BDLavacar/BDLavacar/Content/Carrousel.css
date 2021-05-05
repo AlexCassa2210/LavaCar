@@ -1,0 +1,19 @@
+﻿.carousel-inner{
+    width:100%;
+}
+.item{
+    text-align:center;
+}
+
+.sprite {
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-image: url(../Imagenes/Carrousel_McQueen.png);
+}
+
+
+.Imagen-1 {width:467px; height:230px; background-position: -0px -0px}
+.Imagen-2 {width:467px; height:400px; background-position: -0px -230px}
+.Imagen-3 {width:467px; height:283px; background-position: -0px -630px}
+

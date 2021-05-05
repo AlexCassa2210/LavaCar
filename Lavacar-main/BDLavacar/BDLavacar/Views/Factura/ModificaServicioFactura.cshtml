@@ -1,0 +1,50 @@
+﻿@model BDLavacar.Models.sp_RetornaFacturaServicioID_Result
+@{
+    ViewBag.Title = "ModificaServicioFactura";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Modifica Factura</h2>
+
+<form id="frmServicioFacturaModifica" method="post">
+
+    <div class="form-group">
+        <label>Servicio</label>
+        <input type="text" name="Tipo_S" id="Tipo_S" class="form-control" value="@HttpContext.Current.Session["Servicio"].ToString()" />
+    </div>
+
+    <div class="form-group">
+        <label>Cantidad</label>
+        <input type="text" name="Cantidad_FVS" id="Cantidad_FVS" class="form-control" value="@HttpContext.Current.Session["Cantidad"].ToString()" />
+    </div>
+
+    <div class="form-group">
+        <label id="lblEstado">Estado:</label>
+        <select name="Estado_FVS" id="Estado_FVS" class="form-control">
+            @{
+
+                if (@HttpContext.Current.Session["Estado"].ToString() == "Facturado")
+                {
+                    <option value="Facturado" id="Facturado" selected>Facturado</option>
+                    <option value="Anulado" id="Anulado">Anulado</option>
+                }
+                else
+                {
+                    <option value="Facturado" id="Facturado">Facturado</option>
+                    <option value="Anulado" id="Anulado" selected>Anulado</option>
+                }
+            }
+
+
+        </select>
+    </div>
+    <input type="date" id="fecha" name="name" value="@HttpContext.Current.Session["Fecha"].ToString()" style="display: none;" class="fecha" />
+    <label value="" id="txt"></label>
+    <div class="form-group">
+        <input type="submit" value="Modificar" id="btnModificar" class="btn btn-info" />
+    </div>
+</form>
+
+@section scripts{
+    <script src="~/Scripts/ComprobacionFecha/comprobacionFecha.js"></script>
+}

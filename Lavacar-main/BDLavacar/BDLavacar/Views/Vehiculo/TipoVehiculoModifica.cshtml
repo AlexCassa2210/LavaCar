@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "TipoVehiculoModifica";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Modifica Tipo Vehiculo</h2>
+
+<form id="frmTipoVehiculoModificar" method="post">
+    <div class="form-group">
+        <label>Código de vehículo</label>
+        <input type="text" name="codigo_TV" id="codigo_TV" class="form-control" value="@Model.codigo_TV" />
+    </div>
+
+    <div class="form-group">
+        <label>Tipo de vehículo</label>
+        <input type="text" name="Tipo_TV" id="Tipo_TV" class="form-control" value="@Model.Tipo_TV" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Modificar" id="btnModificar" class="btn btn-info" />
+    </div>
+
+</form>
+
+@section scripts{
+    <script src="~/Scripts/Validaciones/ValidacionesModificaTV.js"></script>
+}

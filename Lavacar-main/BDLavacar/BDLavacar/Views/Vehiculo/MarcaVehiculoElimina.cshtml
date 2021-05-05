@@ -1,0 +1,48 @@
+﻿@model BDLavacar.Models.sp_RetornaMarcaVehiculo_ID_Result
+@{
+    ViewBag.Title = "MarcaVehiculoElimina";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Elimina marca de vehículo</h2>
+
+<form id="frmMarcaVehiculoElimina" method="post">
+    <div>
+        <label>Tipo vehículo</label>
+        <input type="text" name="Tipo_MV" id="Tipo_MV" class="form-control" value="@Model.Tipo_MV" readonly />
+    </div>
+
+    <div>
+        <label>Código vehículo</label>
+        <input type="text" name="Codigo_MV" id="Codigo_MV" class="form-control" value="@Model.Codigo_MV" readonly />
+    </div>
+
+    <div class="form-group">
+        <label>País de fabricación:</label>
+        <select name="Id_PaisFabricacion_PF" id="Id_PaisFabricacion_PF" class="form-control">
+            <option value="">Favor seleccione</option>
+            @{
+                foreach (BDLavacar.Models.sp_RetornaPaisFabricante_Result pais in this.ViewBag.ListaPaises)
+                {
+                    bool esIdPaisModelo = pais.Id_PaisFabricacion_PF == Model.Id_PaisFabricacion_PF;
+
+
+                    if (esIdPaisModelo)
+                    {
+                        <option value="@pais.Id_PaisFabricacion_PF" readonly>@pais.Pais_PF </option>
+                    }
+                    else
+                    {
+                        <option value="@pais.Id_PaisFabricacion_PF" readonly>@pais.Pais_PF </option>
+                    }
+
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Eliminar" id="btnEliminar" class="btn btn-danger" />
+    </div>
+
+</form>

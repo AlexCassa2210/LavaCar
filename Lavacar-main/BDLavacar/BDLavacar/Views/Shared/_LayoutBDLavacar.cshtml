@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <title>@ViewBag.Title</title>
+    <link href="https://kendo.cdn.telerik.com/2020.2.617/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2020.2.617/styles/kendo.blueopal.min.css" rel="stylesheet" />
+    @RenderSection("css", required: false)
+    <link href="~/Content/Carrousel.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+   
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("LavesuMcqueen", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Vehículo
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="background-color:#e1e1e1">
+                            <li>@Html.ActionLink("Consultar Vehículo", "VehiculoLista", "Vehiculo")</li>
+                            <li>@Html.ActionLink("Ingresar Vehículo", "VehiculoNuevo", "Vehiculo")</li>
+                            <li>@Html.ActionLink("Consultar Marca", "MarcaVehiculoLista", "Vehiculo")</li>
+                            <li>@Html.ActionLink("Ingresar Marca", "MarcaVehiculoNuevo", "Vehiculo")</li>
+                            <li>@Html.ActionLink("Consultar Tipo", "TipoVehiculoLista", "Vehiculo")</li>
+                            <li>@Html.ActionLink("Ingresar Tipo", "TipoVehiculoNuevo", "Vehiculo")</li>
+                            <li>@Html.ActionLink("Consultar País", "PaisFabricanteLista", "Vehiculo")</li>
+                            <li>@Html.ActionLink("Ingresar País", "PaisFabricanteNuevo", "Vehiculo")</li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Cliente
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="background-color:#e1e1e1">
+                            <li>@Html.ActionLink("Consultar Cliente", "ClientesLista", "Clientes")</li>
+                            <li>@Html.ActionLink("Ingresar Cliente", "InsertarUsuario", "Clientes")</li>
+                            <li>@Html.ActionLink("Agregar Vehículo", "RegistraFactura", "Factura")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Servicios
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="background-color:#e1e1e1">
+                            <li>@Html.ActionLink("Consultar Servicios", "ServicioLista", "Servicios")</li>
+                            <li>@Html.ActionLink("Ingresar Servicios", "InsertarServicio", "Servicios")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Factura
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="background-color:#e1e1e1">
+                            <li>@Html.ActionLink("Crea Factura", "ListaPreFactura", "Factura")</li>
+                            <li>@Html.ActionLink("Consultar Factura", "KendoFactura", "Factura")</li>
+
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Reportes
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" style="background-color:#e1e1e1">
+                            <li>@Html.ActionLink("Vehículos por cliente", "VehiculosCliente", "Reportes")</li>
+                            <li>@Html.ActionLink("Servicios por cliente", "Servicioscliente", "Reportes")</li>
+                            <li>@Html.ActionLink("Servicios por vehículo", "ServiciosVehiculo", "Reportes")</li>
+
+                        </ul>
+                    </li>
+                    <li id="Cerrar">@Html.ActionLink("Cerrar Sesion", "InicioSesion", "Login")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+    <div style=" position: fixed; left: 0; bottom: 0; padding-top:10px;width: 100%; background-color: #000000; color: white; text-align: center">
+        <footer class="bg-light text-center text-lg-start">
+            <p>&copy; @DateTime.Now.Year - Lavacar</p>
+        </footer>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/myBundle")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/Login/Cerrar_Sesion.js"></script>
+</body>
+</html>

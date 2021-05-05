@@ -1,0 +1,27 @@
+﻿@model List<BDLavacar.Models.sp_RetornaPaisFabricante_Result>
+
+@{
+    ViewBag.Title = "PaisFabricanteLista";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Lista de paises fabricantes</h2>
+
+<table class="table">
+    <tr>
+        <td><strong>Nombre</strong> </td>
+        <td><strong>Código</strong></td>
+        <td><strong>Acción</strong></td>
+        <td><strong>Acción</strong></td>
+    </tr>
+    @{ foreach (BDLavacar.Models.sp_RetornaPaisFabricante_Result posicion in Model)
+        {
+        <tr>
+            <td>@posicion.Pais_PF</td>
+            <td>@posicion.Codigo_PF</td>
+            <td><a href="~/Vehiculo/PaisFabricanteModifica?Id_PaisFabricacion_PF=@posicion.Id_PaisFabricacion_PF" class="btn btn-info">Modificar</a> </td>
+            <td><a href="~/Vehiculo/PaisFabricanteElimina?Id_PaisFabricacion_PF=@posicion.Id_PaisFabricacion_PF" class="btn btn-danger">Eliminar</a></td>
+        </tr>
+        }
+    }
+</table>

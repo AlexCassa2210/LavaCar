@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "InsertarServicio";
+    Layout = "~/Views/Shared/_LayoutBDLavacar.cshtml";
+}
+
+<h2>Insertar Servicio</h2>
+<form id="frmInsertaServicio" method="post">
+    <div class="form-group">
+        <label>Código:</label>
+        <input type="text" name="Codigo_S" id="Codigo_S" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Descripción:</label>
+        <input type="text" name="Descripcion_S" id="Descripcion_S" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Precio:</label>
+        <input type="text" name="Precio_S" id="Precio_S" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Nombre :</label>
+        <input type="text" name="Tipo_S" id="Tipo_S" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Inresar" id="btnIngresar" class="btn btn-success" />
+    </div>
+
+</form>
+@section scripts{
+    <script src="~/Scripts/Validaciones/ValidacionesInsertaServicio.js"></script>
+}

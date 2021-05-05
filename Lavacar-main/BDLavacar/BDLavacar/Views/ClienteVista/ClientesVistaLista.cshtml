@@ -1,0 +1,66 @@
+﻿@model BDLavacar.Models.sp_RetornaVistaClientes_Result
+@{
+    ViewBag.Title = "ClientesVistaLista";
+    Layout = "~/Views/Shared/_LayoutCliente.cshtml";
+}
+
+<h1>Bienvenido <strong>@Model.PApellido @Model.SApellido @Model.Nombre_P</strong>, usted ingresó por última vez <strong>@Model.UltimaFecha_SG</strong></h1>
+<form action="" method="post">
+
+    
+        <div class="row">
+            <div class="col-sm-4 text-center text-light bg-secondary"  >
+                <h1>Datos Ciente</h1>
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i> <label> Correo:</label>
+                    <p>@Model.Correo_P</p>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-user"></i> <label> Nombre:</label>
+                    <p>@Model.Nombre_P @Model.PApellido @Model.SApellido</p>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-user"></i> <label> Cédula:</label>
+                    <p>@Model.Cedula_P</p>
+                </div>
+            </div>
+            <div class="col-sm-4 text-center text-light bg-secondary">
+                <h1>Datos Vehiculos</h1>
+                <div class="form-group">
+                    <i class="fas fa-car"></i> <label> Placa:</label>
+                    <p>@Model.Placa_V</p>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-car"></i> <label> Puertas:</label>
+                    <p>@Model.Numero_Puertas_V</p>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-car"></i> <label> Marca:</label>
+                    <p>@Model.Tipo_MV</p>
+                </div>
+            </div>
+
+
+            <div class="col-sm-4 text-center text-light bg-secondary">
+                <h1>Datos Servicios</h1>
+                <div class="form-group">
+                    <i class="fas fa-list"></i> <label> Cantidad Servicios:</label>
+                    <p>@Model.Cantidad_FVS</p>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-list"></i> <label> Servicios:</label>
+                    <p>@Model.Tipo_S</p>
+                </div>
+                <div class="form-group">
+                    <i class="fas fa-list"></i> <label> Monto:</label>
+                    <p>@Model.Total_F</p>
+                </div>
+            </div>
+
+        </div>
+  
+
+    <a href="~/ClienteVista/VistaPersonaModifica?Id_Cliente_P=@Model.Id_Cliente_P" class="btn btn-info">Editar perfil</a>
+
+</form>
+
